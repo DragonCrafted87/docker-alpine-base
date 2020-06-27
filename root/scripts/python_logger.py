@@ -8,15 +8,14 @@ from logging import StreamHandler
 from sys import stdout
 from sys import stderr
 
-class LogLevelFilter(object):
-    def __init__(self, level):
-        self.__level = level
+class LogLevelFilter():
+  def __init__(self, level):
+    self.__level = level
 
-    def filter(self, logRecord):
-        return logRecord.levelno == self.__level
+  def filter(self, log_record):
+    return log_record.levelno == self.__level
 
-def create_logger(name = None):
-
+def create_logger(name=None):
   # create logger
   log = getLogger(name)
   log.setLevel(DEBUG)
