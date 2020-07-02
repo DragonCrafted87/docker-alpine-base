@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -17,7 +17,7 @@ RUN apk add --update python3 && \
     apk add tzdata && \
     rm  -rf /tmp/* /var/cache/apk/* && \
     chmod +x /docker_service_init && \
-    chmod +x /scripts/*
+    chmod +x -R /scripts/*
 
 # Set environment variables.
 ENV HOME /root
