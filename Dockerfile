@@ -13,8 +13,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 COPY root/. /
 
-RUN apk add --update python3 && \
-    apk add tzdata && \
+RUN apk add --update \
+    py3-pip \
+    python3 \
+    tzdata && \
     rm  -rf /tmp/* /var/cache/apk/* && \
     chmod +x /docker_service_init && \
     chmod +x -R /scripts/*
