@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 
+from os import environ
 from os import execv
 from os import system
-from os import environ
-from pathlib import Path
 from pathlib import Path
 
-environ['PYTHONPATH'] = '/scripts/includes'
+environ["PYTHONPATH"] = "/scripts/includes"
 
-scripts = [p for p in Path('/scripts/setup').iterdir() if p.is_file() and p.stem != '__init__']
+scripts = [
+    p for p in Path("/scripts/setup").iterdir() if p.is_file() and p.stem != "__init__"
+]
 
 print(scripts)
 for p in scripts:
-  system(p)
+    system(p)
 
-execv('/scripts/finalize', ['finalize'])
+execv("/scripts/finalize", ["finalize"])
