@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 from logging import DEBUG
 from logging import INFO
