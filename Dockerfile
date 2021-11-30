@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -14,11 +14,14 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 COPY root/. /
 
 RUN apk add --update \
-    py3-pip \
-    python3 \
-    tzdata && \
-    rm  -rf /tmp/* /var/cache/apk/* && \
-    chmod +x /docker_service_init && \
+        py3-pip \
+        python3 \
+        tzdata \
+    && \
+    rm  -rf /tmp/* /var/cache/apk/* \
+    && \
+    chmod +x /docker_service_init \
+    && \
     chmod +x -R /scripts/*
 
 # Set environment variables.
