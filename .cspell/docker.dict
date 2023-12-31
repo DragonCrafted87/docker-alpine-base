@@ -1,4 +1,6 @@
 ENV
 VCS
+WORKDIR
 apk
 dragoncrafted
+tzdata
