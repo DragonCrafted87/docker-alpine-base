@@ -15,12 +15,13 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 COPY root/. /
 
 RUN ash <<eot
-    apk add --update \
+    apk upgrade
+    apk add --no-cache --update \
         py3-pip \
         python3 \
         tzdata
 
-    chmod +x /docker_service_init \
+    chmod +x /docker_service_init
 
     rm -rf /tmp/*
     rm -rf /var/cache/apk/*
