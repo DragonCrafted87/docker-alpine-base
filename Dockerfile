@@ -33,4 +33,4 @@ ENV HOME /root
 # Define working directory.
 WORKDIR /root
 
-CMD ["/docker_service_init"]
+ENTRYPOINT ["/docker_service_init"]

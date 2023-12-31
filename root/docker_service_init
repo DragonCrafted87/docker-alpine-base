@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import sys
 from os import environ
 from os import execv
 from os import system
@@ -16,4 +17,4 @@ print(scripts)
 for p in scripts:
     system(p)
 
-execv("/scripts/finalize", ["finalize"])
+execv("/scripts/finalize", ["finalize"] + sys.argv[1:])
